@@ -1,16 +1,125 @@
-# React + Vite
+# 🗂️ Kanban
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Real-Time Collaborative Task & Activity Dashboard (Next.js)**
 
-Currently, two official plugins are available:
+Kanban is a **full-stack, real-time task management system** inspired by Trello, Linear, and Jira.  
+Designed as a learning-heavy project to master:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- WebSockets
+- Full-stack data flow
+- Real-time synchronization
+- State management
+- Query optimization
+- Scalable architecture
 
-## React Compiler
+Built with the **PERN stack + Next.js (App Router)**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+- **Next.js (App Router)** – Server & Client Components
+- React 18
+- Zustand / Redux Toolkit for state management
+- Tailwind CSS
+- WebSocket client
+
+### Backend
+- Node.js + Express
+- WebSocket (ws / socket.io)
+- Prisma ORM
+- PostgreSQL
+
+### Infrastructure
+- PostgreSQL for persistence
+- WebSockets for real-time sync
+- REST APIs for mutations
+
+---
+
+## 🧠 Core Features
+
+### 🧑‍🤝‍🧑 Workspaces & Teams
+- Multiple workspaces
+- Role-based membership (admin, member)
+
+### 📋 Boards & Columns
+- Boards inside workspaces
+- Columns (lists) with ordered positions
+- Drag & drop reordering
+
+### 📝 Tasks
+- Create, update, delete tasks
+- Move tasks across columns
+- Position-based ordering
+- Due dates & status
+
+### 💬 Comments
+- Task-level threaded comments
+- Real-time updates
+
+### 🔔 Notifications
+- Task assignments
+- Mentions
+- Unread tracking
+
+### 📰 Activity Feed
+- Append-only event log
+- Board-level and task-level activity
+- Optimized pagination
+
+### ⚡ Real-Time Collaboration
+- Live task creation
+- Live task movement
+- Live comments
+- Selective broadcasting to connected users
+
+---
+
+## 🗄️ Data Model (High-Level)
+
+**Main entities:**
+- User
+- Workspace
+- WorkspaceMember
+- Board
+- Column
+- Task
+- TaskAssignment
+- Comment
+- Activity
+- Notification
+
+**Optimized with indexes for:**
+- Column ordering
+- Board activity feeds
+- User notifications
+- Real-time updates
+
+---
+
+## 🏗️ Project Structure
+
+### Backend: `web-sockets-api/`
+```bash
+src/
+  modules/
+    auth/
+    workspace/
+    board/
+    column/
+    task/
+    comment/
+    activity/
+    notification/
+  websocket/
+    index.ts
+    handlers/
+  prisma/
+    schema.prisma
+  lib/
+    prisma.ts
+    auth.ts
+  routes.ts
+  server.ts
